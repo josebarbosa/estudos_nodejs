@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CRUD de Clientes</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+    <h1><%= title%></h1>
+    <p>Preencha dos dados abaixo para salvar o cliente:</p>
+    <form action="<%= action %>" method="post">
+        <p>
+            <label>Nome: <input type="text" name="nome" value="<%=doc.nome %>" /></label>
+        </p>
+        <p>
+            <label>Idade: <input type="number" name="idade" value="<%=doc.idade%>"/></label>
+        </p>
+        <p>
+            <label>UF: <select name="uf">
+                <% const s = "selected" %>
+                <option <% if(doc.uf ==="RS"){%><%= s %><%}%>>RS</option>
+                <option <% if(doc.uf ==="SC"){%><%= s %><%}%>>SC</option>
+                <option <% if(doc.uf ==="PR"){%><%= s %><%}%>>PR</option>
+                <option <% if(doc.uf ==="MG"){%><%= s %><%}%>>MG</option>
+                <option <% if(doc.uf ==="GO"){%><%= s %><%}%>>GO</option>
+            </select></label>
+        </p>
+        <p>
+            <a href="/">Cancelar</a> | <input type="submit" value="Salvar"/>
+        </p>
+    </form>
+</body>
+</html>
